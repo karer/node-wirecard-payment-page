@@ -1,0 +1,39 @@
+{
+  "name": "wirecard-payment-page",
+  "version": "1.0.0",
+  "description": "A TS library for making payments through the Wirecard Payment Page gateway.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "wirecard",
+    "payment page",
+    "api"
+  ],
+  "homepage": "https://github.com/karer/node-wirecard-payment-page",
+  "author": {
+    "name": "Kacper Geisheimer",
+    "email": "devkarer@gmail.com",
+    "url": "https://karermedia.pl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karer/node-wirecard-payment-page"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "request-promise-native": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/request-promise-native": "^1.0.16",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1",
+    "typescript": "^3.5.1"
+  }
+}
