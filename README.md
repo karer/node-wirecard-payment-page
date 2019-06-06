@@ -1,6 +1,5 @@
 # Wirecard Payment Page SDK for Node.js
 
-![CircleCI](https://img.shields.io/circleci/build/github/karer/node-wirecard-payment-page.svg)
 [![npm version](https://img.shields.io/npm/v/wirecard-payment-page.svg)](https://npmjs.com/package/wirecard-payment-page)
 [![dependencies](https://img.shields.io/david/karer/node-wirecard-payment-page.svg)](https://david-dm.org/karer/node-wirecard-payment-page)
 ![npm type definitions](https://img.shields.io/npm/types/wirecard-payment-page.svg)
