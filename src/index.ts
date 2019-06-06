@@ -1,7 +1,7 @@
 import request from 'request-promise-native'
 
 import { Config } from './config'
-import { PaymentRequest } from './payment'
+import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './payment'
 
 export class WirecardPaymentPage {
   private config: Config
@@ -14,7 +14,7 @@ export class WirecardPaymentPage {
     return this.config
   }
 
-  public createPayment(payment: PaymentRequest): request.RequestPromise {
+  public async createPayment(payment: PaymentRequest): PaymentResponsePromise {
     const config = this.getConfig()
 
     const fields = {
@@ -41,7 +41,19 @@ export class WirecardPaymentPage {
       }
     }
 
-    return this.sendRequest(config.baseUrl, fields)
+    let result
+
+    try {
+      result = await this.sendRequest(config.baseUrl, fields)
+    } catch (err) {
+      throw new Error(`Cannot create a payment request. Reason: ${err.message}`)
+    }
+
+    const paymentResponse: PaymentResponse = {
+      redirectUrl: result['payment-redirect-url']
+    }
+
+    return paymentResponse
   }
 
   protected sendRequest(url: string, fields: object): request.RequestPromise {
