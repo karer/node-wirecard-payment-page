@@ -4,13 +4,17 @@ import { Config } from './config'
 import { PaymentRequest } from './payment'
 
 export class WirecardPaymentPage {
-  config: Config
+  private config: Config
 
-  constructor(config: Config) {
+  public constructor(config: Config) {
     this.config = config
   }
 
-  createPayment(payment: PaymentRequest) {
+  protected getConfig(): Config {
+    return this.config
+  }
+
+  public createPayment(payment: PaymentRequest): request.RequestPromise {
     const config = this.getConfig()
 
     const fields = {
@@ -40,11 +44,7 @@ export class WirecardPaymentPage {
     return this.sendRequest(config.baseUrl, fields)
   }
 
-  getConfig() {
-    return this.config
-  }
-
-  sendRequest(url: string, fields: object) {
+  protected sendRequest(url: string, fields: object): request.RequestPromise {
     const { userName: user, password: pass } = this.getConfig()
 
     return request({

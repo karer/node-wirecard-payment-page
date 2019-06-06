@@ -1,4 +1,4 @@
-export type PaymentRequest = {
+export interface PaymentRequest {
   id: string
   type: string
   amount: number
