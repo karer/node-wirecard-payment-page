@@ -5,16 +5,17 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/devkarer/0usd)
 
-Node.js implementation of [Wirecard Payment Page](https://github.com/wirecard/paymentSDK-php/wiki/General-information). TypeScript and Promises based.
+Node.js implementation of [Wirecard Payment Page](https://doc.wirecard.com/WPP.html). TypeScript and Promises based.
 
 ## Installation
 
     npm i wirecard-payment-page --save
 
 ## Features:
-* ✅ Create new payment
-* 🔜 Validate payment response
-* 🔜 Payment methods with extra fields (e.g paysafecard)
+
+- ✅ Create new payment with credit card
+- 🔜 Validate payment response
+- 🔜 Payment methods with extra fields (e.g paysafecard)
 
 ## Usage
 
