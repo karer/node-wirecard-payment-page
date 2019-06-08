@@ -1,7 +1,7 @@
 import request from 'request-promise-native'
 
 import { Config } from './config'
-import { PaymentRequest, PaymentResponse, PaymentResponsePromise, PaymentNotificationFormat } from './payment'
+import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './payment'
 
 export class WirecardPaymentPage {
   private config: Config
