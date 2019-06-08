@@ -1,7 +1,7 @@
 import request from 'request-promise-native'
 
 import { Config } from './config'
-import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './payment'
+import { PaymentRequest, PaymentResponse, PaymentResponsePromise, PaymentNotificationFormat } from './payment'
 
 export class WirecardPaymentPage {
   private config: Config
@@ -35,6 +35,16 @@ export class WirecardPaymentPage {
             }
           ]
         },
+        notifications: payment.notification
+          ? {
+              format: payment.notification.format,
+              notification: [
+                {
+                  url: payment.notification.url
+                }
+              ]
+            }
+          : undefined,
         'success-redirect-url': payment.successUrl,
         'fail-redirect-url': payment.errorUrl,
         'cancel-redirect-url': payment.errorUrl
