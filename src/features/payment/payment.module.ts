@@ -4,7 +4,7 @@ import { WirecardError } from '../../error'
 import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from '.'
 
 export class PaymentModule extends LibModule {
-  public async createPayment(payment: PaymentRequest): PaymentResponsePromise {
+  public async create(payment: PaymentRequest): PaymentResponsePromise {
     const config = this.getConfig()
 
     const fields = {
