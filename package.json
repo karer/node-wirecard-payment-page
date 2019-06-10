@@ -9,7 +9,8 @@
     "prettify": "prettier --write \"src/**/*.{js,ts,json}\"",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "lint:fix": "npm run lint -- --fix",
-    "format": "npm run prettify && npm run lint:fix"
+    "format": "npm run prettify && npm run lint:fix",
+    "test": "jest"
   },
   "keywords": [
     "wirecard",
