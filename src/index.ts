@@ -10,10 +10,6 @@ export class WirecardPaymentPage {
     this.config = config
   }
 
-  protected getConfig(): Config {
-    return this.config
-  }
-
   public async createPayment(payment: PaymentRequest): PaymentResponsePromise {
     const config = this.getConfig()
 
@@ -37,13 +33,13 @@ export class WirecardPaymentPage {
         },
         notifications: payment.notification
           ? {
-              format: payment.notification.format,
-              notification: [
-                {
-                  url: payment.notification.url
-                }
-              ]
-            }
+            format: payment.notification.format,
+            notification: [
+              {
+                url: payment.notification.url
+              }
+            ]
+          }
           : undefined,
         'success-redirect-url': payment.successUrl,
         'fail-redirect-url': payment.errorUrl,
@@ -64,6 +60,10 @@ export class WirecardPaymentPage {
     }
 
     return paymentResponse
+  }
+
+  protected getConfig(): Config {
+    return this.config
   }
 
   protected sendRequest(url: string, fields: object): request.RequestPromise {
