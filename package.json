@@ -1,15 +1,19 @@
 {
   "name": "wirecard-payment-page",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A TS library for making payments through the Wirecard Payment Page gateway.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "clean": "npm run clean:build",
+    "clean:build": "rimraf ./dist",
+    "build": "npm run clean:build && tsc",
     "prettify": "prettier --write \"src/**/*.{js,ts,json}\"",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "lint:fix": "npm run lint -- --fix",
-    "format": "npm run prettify && npm run lint:fix"
+    "format": "npm run prettify && npm run lint:fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "wirecard",
@@ -31,13 +35,18 @@
     "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.13",
     "@types/request-promise-native": "^1.0.16",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
     "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
   }
 }

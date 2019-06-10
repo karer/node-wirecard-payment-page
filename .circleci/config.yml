@@ -22,6 +22,9 @@ jobs:
           paths:
             - node_modules
       - run:
+          name: Test
+          command: npm run test
+      - run:
           name: Build
           command: npm run build
       - persist_to_workspace:
