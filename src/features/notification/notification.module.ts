@@ -7,6 +7,6 @@ export class NotificationModule extends LibModule {
     // TODO: decode and verify response
     // TODO: map NotificationRequest to Notification
 
-    return {}
+    return { placeholder: 'a' }
   }
 }
