@@ -1,7 +1,9 @@
 import request from 'request-promise-native'
 
 import { Config } from './config'
+import { WirecardError } from './error'
 import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './payment'
+import { NotificationRequest, Notification } from './notification'
 
 export class WirecardPaymentPage {
   private config: Config
@@ -33,13 +35,13 @@ export class WirecardPaymentPage {
         },
         notifications: payment.notification
           ? {
-            format: payment.notification.format,
-            notification: [
-              {
-                url: payment.notification.url
-              }
-            ]
-          }
+              format: payment.notification.format,
+              notification: [
+                {
+                  url: payment.notification.url
+                }
+              ]
+            }
           : undefined,
         'success-redirect-url': payment.successUrl,
         'fail-redirect-url': payment.errorUrl,
@@ -52,7 +54,7 @@ export class WirecardPaymentPage {
     try {
       result = await this.sendRequest(config.baseUrl, fields)
     } catch (err) {
-      throw new Error(`Cannot create a payment request. Reason: ${err.message}`)
+      throw new WirecardError(`Cannot create a payment request. Reason: ${err.message}`)
     }
 
     const paymentResponse: PaymentResponse = {
@@ -60,6 +62,13 @@ export class WirecardPaymentPage {
     }
 
     return paymentResponse
+  }
+
+  public consumeNotification(notification: NotificationRequest): Notification {
+    // TODO: decode and verify response
+    // TODO: map NotificationRequest to Notification
+
+    return {}
   }
 
   protected getConfig(): Config {
