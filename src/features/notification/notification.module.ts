@@ -1,12 +1,19 @@
 import { LibModule } from '../../utils'
 
-import { NotificationRequest, Notification } from '.'
+import { EncryptedNotificationRequest, NotificationRequest, Notification } from '.'
 
 export class NotificationModule extends LibModule {
-  public consume(notification: NotificationRequest): Notification {
-    // TODO: decode and verify response
-    // TODO: map NotificationRequest to Notification
+  public consume(encryptedNotification: EncryptedNotificationRequest): Notification {
+    const request: NotificationRequest = this.decrypt(encryptedNotification)
 
-    return { placeholder: 'a' }
+    return this.mapRequestToNotification(request)
+  }
+
+  protected decrypt(notification: EncryptedNotificationRequest): NotificationRequest {
+    return {} as NotificationRequest
+  }
+
+  protected mapRequestToNotification(request: NotificationRequest): Notification {
+    return {} as Notification
   }
 }
