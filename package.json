@@ -32,6 +32,7 @@
     "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.13",
     "@types/request-promise-native": "^1.0.16",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
@@ -41,6 +42,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
   }
 }
