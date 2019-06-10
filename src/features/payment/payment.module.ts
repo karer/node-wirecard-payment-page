@@ -1,7 +1,7 @@
-import { LibModule } from '../util'
-import { WirecardError } from '../error'
+import { LibModule } from '../../utils'
+import { WirecardError } from '../../error'
 
-import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './'
+import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from '.'
 
 export class PaymentModule extends LibModule {
   public async createPayment(payment: PaymentRequest): PaymentResponsePromise {
