@@ -1,6 +1,6 @@
 {
   "name": "wirecard-payment-page",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A TS library for making payments through the Wirecard Payment Page gateway.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
