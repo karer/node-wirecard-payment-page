@@ -13,14 +13,16 @@ Node.js implementation of [Wirecard Payment Page](https://doc.wirecard.com/WPP.h
 
     npm i wirecard-payment-page --save
 
-## Features:
+## Features
 
 - ✅ Create new payment with credit card
-- 🔜 Validate payment response
-- 🔜 Payment methods with extra fields (e.g paysafecard)
+- ✅ Validate payment response
+- 🔜 Create new payment with other methods (e.g. paysafecard, PayPal)
+
+## Technologies
+
+🔜
 
 ## Usage
 
-```javascript
 🔜
-```
