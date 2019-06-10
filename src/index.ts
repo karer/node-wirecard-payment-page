@@ -1,9 +1,8 @@
 import request from 'request-promise-native'
 
-import { Config } from './config'
+import { Config, ConfigGetter } from './config'
 import { WirecardError } from './error'
 import { PaymentRequest, PaymentResponse, PaymentResponsePromise } from './payment'
-import { NotificationRequest, Notification } from './notification'
 
 export class WirecardPaymentPage {
   private config: Config
@@ -64,18 +63,11 @@ export class WirecardPaymentPage {
     return paymentResponse
   }
 
-  public consumeNotification(notification: NotificationRequest): Notification {
-    // TODO: decode and verify response
-    // TODO: map NotificationRequest to Notification
-
-    return {}
-  }
-
-  protected getConfig(): Config {
+  protected getConfig: ConfigGetter = (): Config => {
     return this.config
   }
 
-  protected sendRequest(url: string, fields: object): request.RequestPromise {
+  protected sendRequest = (url: string, fields: object): request.RequestPromise => {
     const { userName: user, password: pass } = this.getConfig()
 
     return request({

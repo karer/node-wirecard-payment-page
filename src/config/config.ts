@@ -4,3 +4,5 @@ export interface Config {
   password: string
   merchantAccountId: string
 }
+
+export type ConfigGetter = () => Config
