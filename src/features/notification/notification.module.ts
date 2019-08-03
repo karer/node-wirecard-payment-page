@@ -34,7 +34,7 @@ export class NotificationModule extends LibModule {
   protected mapRequestToNotification(request: NotificationRequest): Notification {
     const { payment } = request
 
-    const status = request.statuses.status[0]
+    const status = payment.statuses.status[0]
 
     return {
       payment: {
@@ -55,22 +55,22 @@ export class NotificationModule extends LibModule {
         errorUrl: payment['fail-redirect-url'],
         apiId: payment['api-id']
       },
-      requestId: request['request-id'],
+      requestId: payment['request-id'],
       requestedAmount: {
-        currency: request['requested-amount'].currency,
-        value: request['requested-amount'].value
+        currency: payment['requested-amount'].currency,
+        value: payment['requested-amount'].value
       },
       status: {
         description: status.description,
         severity: status.severity,
         code: status.code
       },
-      authorizationCode: request['authorization-code'],
+      authorizationCode: payment['authorization-code'],
       accountHolder: {
-        firstName: request['account-holder']['first-name'],
-        lastName: request['account-holder']['last-name']
+        firstName: payment['account-holder']['first-name'],
+        lastName: payment['account-holder']['last-name']
       },
-      descriptor: request.descriptor
+      descriptor: payment.descriptor
     }
   }
 }
