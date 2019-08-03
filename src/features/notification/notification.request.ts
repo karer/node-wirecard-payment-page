@@ -20,23 +20,23 @@ export interface NotificationRequest {
     'success-redirect-url': string //'https://demoshop-test.wirecard.com/demoshop/#/success'
     'fail-redirect-url': string //'https://demoshop-test.wirecard.com/demoshop/#/error'
     'api-id': string //'wpp'
+    statuses: {
+      status: {
+        description: string //'3d-acquirer:The resource was successfully created.'
+        severity: string //'information'
+        code: string //'201.0000'
+      }[]
+    }
+    'authorization-code': string //'801433'
+    'account-holder': {
+      'first-name': string //'John'
+      'last-name': string //'Doe'
+    }
+    descriptor: string //'demo descriptor'
+    'request-id': string //'28285dbd-ecd3-49bd-a7e5-0239affa2448'
+    'requested-amount': {
+      currency: string //'EUR'
+      value: number //10
+    }
   }
-  'request-id': string //'28285dbd-ecd3-49bd-a7e5-0239affa2448'
-  'requested-amount': {
-    currency: string //'EUR'
-    value: number //10
-  }
-  statuses: {
-    status: {
-      description: string //'3d-acquirer:The resource was successfully created.'
-      severity: string //'information'
-      code: string //'201.0000'
-    }[]
-  }
-  'authorization-code': string //'801433'
-  'account-holder': {
-    'first-name': string //'John'
-    'last-name': string //'Doe'
-  }
-  descriptor: string //'demo descriptor'
 }
